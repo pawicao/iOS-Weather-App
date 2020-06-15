@@ -1,0 +1,375 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 50;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		3F8690192487BE7B0031B39D /* Weather.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3F8690182487BE7B0031B39D /* Weather.swift */; };
+		3FEE8143247E7D1D001881EA /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3FEE8142247E7D1D001881EA /* AppDelegate.swift */; };
+		3FEE8145247E7D1D001881EA /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3FEE8144247E7D1D001881EA /* ViewController.swift */; };
+		3FEE8148247E7D1D001881EA /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 3FEE8146247E7D1D001881EA /* Main.storyboard */; };
+		3FEE814A247E7D20001881EA /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 3FEE8149247E7D20001881EA /* Assets.xcassets */; };
+		3FEE814D247E7D20001881EA /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 3FEE814B247E7D20001881EA /* LaunchScreen.storyboard */; };
+		3FEE8155247E7DAA001881EA /* TestFile.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3FEE8154247E7DAA001881EA /* TestFile.swift */; };
+		3FEE8159247E8150001881EA /* ApiHandler.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3FEE8158247E8150001881EA /* ApiHandler.swift */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXFileReference section */
+		3F8690182487BE7B0031B39D /* Weather.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Weather.swift; sourceTree = "<group>"; };
+		3FEE813F247E7D1D001881EA /* pawica-prognoza-pogody.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "pawica-prognoza-pogody.app"; sourceTree = BUILT_PRODUCTS_DIR; };
+		3FEE8142247E7D1D001881EA /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
+		3FEE8144247E7D1D001881EA /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
+		3FEE8147247E7D1D001881EA /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
+		3FEE8149247E7D20001881EA /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		3FEE814C247E7D20001881EA /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
+		3FEE814E247E7D20001881EA /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		3FEE8154247E7DAA001881EA /* TestFile.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TestFile.swift; sourceTree = "<group>"; };
+		3FEE8158247E8150001881EA /* ApiHandler.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ApiHandler.swift; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		3FEE813C247E7D1D001881EA /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		3F8690172487BE3F0031B39D /* Models */ = {
+			isa = PBXGroup;
+			children = (
+				3F8690182487BE7B0031B39D /* Weather.swift */,
+			);
+			path = Models;
+			sourceTree = "<group>";
+		};
+		3FEE8136247E7D1D001881EA = {
+			isa = PBXGroup;
+			children = (
+				3FEE8141247E7D1D001881EA /* pawica-prognoza-pogody */,
+				3FEE8140247E7D1D001881EA /* Products */,
+			);
+			sourceTree = "<group>";
+		};
+		3FEE8140247E7D1D001881EA /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				3FEE813F247E7D1D001881EA /* pawica-prognoza-pogody.app */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		3FEE8141247E7D1D001881EA /* pawica-prognoza-pogody */ = {
+			isa = PBXGroup;
+			children = (
+				3F8690172487BE3F0031B39D /* Models */,
+				3FEE8157247E8137001881EA /* Web */,
+				3FEE8156247E8051001881EA /* New Group */,
+				3FEE8142247E7D1D001881EA /* AppDelegate.swift */,
+				3FEE8144247E7D1D001881EA /* ViewController.swift */,
+				3FEE8146247E7D1D001881EA /* Main.storyboard */,
+				3FEE8149247E7D20001881EA /* Assets.xcassets */,
+				3FEE814B247E7D20001881EA /* LaunchScreen.storyboard */,
+				3FEE814E247E7D20001881EA /* Info.plist */,
+				3FEE8154247E7DAA001881EA /* TestFile.swift */,
+			);
+			path = "pawica-prognoza-pogody";
+			sourceTree = "<group>";
+		};
+		3FEE8156247E8051001881EA /* New Group */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = "New Group";
+			sourceTree = "<group>";
+		};
+		3FEE8157247E8137001881EA /* Web */ = {
+			isa = PBXGroup;
+			children = (
+				3FEE8158247E8150001881EA /* ApiHandler.swift */,
+			);
+			path = Web;
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		3FEE813E247E7D1D001881EA /* pawica-prognoza-pogody */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 3FEE8151247E7D20001881EA /* Build configuration list for PBXNativeTarget "pawica-prognoza-pogody" */;
+			buildPhases = (
+				3FEE813B247E7D1D001881EA /* Sources */,
+				3FEE813C247E7D1D001881EA /* Frameworks */,
+				3FEE813D247E7D1D001881EA /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = "pawica-prognoza-pogody";
+			productName = "pawica-prognoza-pogody";
+			productReference = 3FEE813F247E7D1D001881EA /* pawica-prognoza-pogody.app */;
+			productType = "com.apple.product-type.application";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		3FEE8137247E7D1D001881EA /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				LastSwiftUpdateCheck = 1000;
+				LastUpgradeCheck = 1000;
+				ORGANIZATIONNAME = Student;
+				TargetAttributes = {
+					3FEE813E247E7D1D001881EA = {
+						CreatedOnToolsVersion = 10.0;
+					};
+				};
+			};
+			buildConfigurationList = 3FEE813A247E7D1D001881EA /* Build configuration list for PBXProject "pawica-prognoza-pogody" */;
+			compatibilityVersion = "Xcode 9.3";
+			developmentRegion = en;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+				Base,
+			);
+			mainGroup = 3FEE8136247E7D1D001881EA;
+			productRefGroup = 3FEE8140247E7D1D001881EA /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				3FEE813E247E7D1D001881EA /* pawica-prognoza-pogody */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		3FEE813D247E7D1D001881EA /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				3FEE814D247E7D20001881EA /* LaunchScreen.storyboard in Resources */,
+				3FEE814A247E7D20001881EA /* Assets.xcassets in Resources */,
+				3FEE8148247E7D1D001881EA /* Main.storyboard in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		3FEE813B247E7D1D001881EA /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				3FEE8155247E7DAA001881EA /* TestFile.swift in Sources */,
+				3FEE8145247E7D1D001881EA /* ViewController.swift in Sources */,
+				3FEE8143247E7D1D001881EA /* AppDelegate.swift in Sources */,
+				3FEE8159247E8150001881EA /* ApiHandler.swift in Sources */,
+				3F8690192487BE7B0031B39D /* Weather.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXVariantGroup section */
+		3FEE8146247E7D1D001881EA /* Main.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				3FEE8147247E7D1D001881EA /* Base */,
+			);
+			name = Main.storyboard;
+			sourceTree = "<group>";
+		};
+		3FEE814B247E7D20001881EA /* LaunchScreen.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				3FEE814C247E7D20001881EA /* Base */,
+			);
+			name = LaunchScreen.storyboard;
+			sourceTree = "<group>";
+		};
+/* End PBXVariantGroup section */
+
+/* Begin XCBuildConfiguration section */
+		3FEE814F247E7D20001881EA /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++14";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = dwarf;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_TESTABILITY = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu11;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 12.0;
+				MTL_ENABLE_DEBUG_INFO = INCLUDE_SOURCE;
+				MTL_FAST_MATH = YES;
+				ONLY_ACTIVE_ARCH = YES;
+				SDKROOT = iphoneos;
+				SWIFT_ACTIVE_COMPILATION_CONDITIONS = DEBUG;
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+			};
+			name = Debug;
+		};
+		3FEE8150247E7D20001881EA /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++14";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				ENABLE_NS_ASSERTIONS = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu11;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 12.0;
+				MTL_ENABLE_DEBUG_INFO = NO;
+				MTL_FAST_MATH = YES;
+				SDKROOT = iphoneos;
+				SWIFT_COMPILATION_MODE = wholemodule;
+				SWIFT_OPTIMIZATION_LEVEL = "-O";
+				VALIDATE_PRODUCT = YES;
+			};
+			name = Release;
+		};
+		3FEE8152247E7D20001881EA /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_STYLE = Automatic;
+				INFOPLIST_FILE = "pawica-prognoza-pogody/Info.plist";
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = "pl.agh.edu.pawica-prognoza-pogody";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 4.2;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Debug;
+		};
+		3FEE8153247E7D20001881EA /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_STYLE = Automatic;
+				INFOPLIST_FILE = "pawica-prognoza-pogody/Info.plist";
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = "pl.agh.edu.pawica-prognoza-pogody";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 4.2;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		3FEE813A247E7D1D001881EA /* Build configuration list for PBXProject "pawica-prognoza-pogody" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				3FEE814F247E7D20001881EA /* Debug */,
+				3FEE8150247E7D20001881EA /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		3FEE8151247E7D20001881EA /* Build configuration list for PBXNativeTarget "pawica-prognoza-pogody" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				3FEE8152247E7D20001881EA /* Debug */,
+				3FEE8153247E7D20001881EA /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = 3FEE8137247E7D1D001881EA /* Project object */;
+}
