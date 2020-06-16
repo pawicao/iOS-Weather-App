@@ -22,12 +22,13 @@ struct Weather {
 	let pressure: Int
 	
 	init(response: [String: Any]) throws {
-		guard let weatherJSON = response["weather"] as? [String: String],
-			let main = weatherJSON["main"]
+        
+        guard let weatherJSON = response["weather"] as? [AnyObject],
+			let main = weatherJSON[0]["main"] as? String
 		else {
 			throw SerializationError.missing("main")
 		}
-		
+        
 		guard let temperatureJSON = response["temp"] as? [String: Double],
 			let min = temperatureJSON["min"],
 			let max = temperatureJSON["max"]
@@ -54,6 +55,5 @@ struct Weather {
 		self.wind = (wind_speed, wind_deg)
 		self.rain = rain
 		self.pressure = pressure
-		
 	}
 }
