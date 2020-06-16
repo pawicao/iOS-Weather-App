@@ -9,6 +9,7 @@
 import Foundation
 
 struct Weather {
+    
 
 	enum SerializationError: Error {
 		case missing(String)
@@ -20,11 +21,15 @@ struct Weather {
 	let wind: (speed: Double, deg: Int)
 	let rain: Double
 	let pressure: Int
+    let icon: String
+    let date: String
 	
 	init(response: [String: Any]) throws {
-        
+        let dateFormatter = DateFormatter()
+        dateFormatter.dateFormat = "dd.MM.YYYY"
         guard let weatherJSON = response["weather"] as? [AnyObject],
-			let main = weatherJSON[0]["main"] as? String
+			let main = weatherJSON[0]["main"] as? String,
+            let iconName = weatherJSON[0]["icon"] as? String
 		else {
 			throw SerializationError.missing("main")
 		}
@@ -39,6 +44,10 @@ struct Weather {
 		guard let pressure = response["pressure"] as? Int else {
 			throw SerializationError.missing("pressure")
 		}
+        
+        guard let dt = response["dt"] as? Double else {
+            throw SerializationError.missing("dt")
+        }
 		
 		let rain = response["rain"] as? Double ?? 0.0
 		
@@ -49,11 +58,15 @@ struct Weather {
 		guard let wind_deg = response["wind_deg"] as? Int else {
 			throw SerializationError.missing("wind_deg")
 		}
+        
+        
 		
 		self.main = main
 		self.temperature = (min, max)
 		self.wind = (wind_speed, wind_deg)
 		self.rain = rain
 		self.pressure = pressure
+        self.icon = iconName
+        self.date = dateFormatter.string(from: Date(timeIntervalSince1970: dt))
 	}
 }
