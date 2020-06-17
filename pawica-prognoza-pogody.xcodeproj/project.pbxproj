@@ -13,7 +13,6 @@
 		3FEE8148247E7D1D001881EA /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 3FEE8146247E7D1D001881EA /* Main.storyboard */; };
 		3FEE814A247E7D20001881EA /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 3FEE8149247E7D20001881EA /* Assets.xcassets */; };
 		3FEE814D247E7D20001881EA /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 3FEE814B247E7D20001881EA /* LaunchScreen.storyboard */; };
-		3FEE8155247E7DAA001881EA /* TestFile.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3FEE8154247E7DAA001881EA /* TestFile.swift */; };
 		3FEE8159247E8150001881EA /* ApiHandler.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3FEE8158247E8150001881EA /* ApiHandler.swift */; };
 /* End PBXBuildFile section */
 
@@ -26,7 +25,6 @@
 		3FEE8149247E7D20001881EA /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		3FEE814C247E7D20001881EA /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		3FEE814E247E7D20001881EA /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		3FEE8154247E7DAA001881EA /* TestFile.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TestFile.swift; sourceTree = "<group>"; };
 		3FEE8158247E8150001881EA /* ApiHandler.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ApiHandler.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -70,23 +68,14 @@
 			children = (
 				3F8690172487BE3F0031B39D /* Models */,
 				3FEE8157247E8137001881EA /* Web */,
-				3FEE8156247E8051001881EA /* New Group */,
 				3FEE8142247E7D1D001881EA /* AppDelegate.swift */,
 				3FEE8144247E7D1D001881EA /* ViewController.swift */,
 				3FEE8146247E7D1D001881EA /* Main.storyboard */,
 				3FEE8149247E7D20001881EA /* Assets.xcassets */,
 				3FEE814B247E7D20001881EA /* LaunchScreen.storyboard */,
 				3FEE814E247E7D20001881EA /* Info.plist */,
-				3FEE8154247E7DAA001881EA /* TestFile.swift */,
 			);
 			path = "pawica-prognoza-pogody";
-			sourceTree = "<group>";
-		};
-		3FEE8156247E8051001881EA /* New Group */ = {
-			isa = PBXGroup;
-			children = (
-			);
-			path = "New Group";
 			sourceTree = "<group>";
 		};
 		3FEE8157247E8137001881EA /* Web */ = {
@@ -168,7 +157,6 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				3FEE8155247E7DAA001881EA /* TestFile.swift in Sources */,
 				3FEE8145247E7D1D001881EA /* ViewController.swift in Sources */,
 				3FEE8143247E7D1D001881EA /* AppDelegate.swift in Sources */,
 				3FEE8159247E8150001881EA /* ApiHandler.swift in Sources */,

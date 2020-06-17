@@ -25,8 +25,7 @@ struct Weather {
     let date: String
 	
 	init(response: [String: Any]) throws {
-        let dateFormatter = DateFormatter()
-        dateFormatter.dateFormat = "dd.MM.YYYY"
+        
         guard let weatherJSON = response["weather"] as? [AnyObject],
 			let main = weatherJSON[0]["main"] as? String,
             let iconName = weatherJSON[0]["icon"] as? String
@@ -67,6 +66,9 @@ struct Weather {
 		self.rain = rain
 		self.pressure = pressure
         self.icon = iconName
+        
+        let dateFormatter = DateFormatter()
+        dateFormatter.dateFormat = "dd.MM.YYYY"
         self.date = dateFormatter.string(from: Date(timeIntervalSince1970: dt))
 	}
 }

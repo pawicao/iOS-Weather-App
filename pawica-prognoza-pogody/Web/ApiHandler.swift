@@ -12,6 +12,7 @@ class ApiHandler {
   
   private let baseURL = "https://api.openweathermap.org/data/2.5/onecall"
   private let APIKey = "8eec1ab6030b33a264452699708b1f87"
+    
   func getWeather(_ lat: Double,_ lon: Double, completion: @escaping ([Weather]) -> Void) {
     let requestURL = URL(string: "\(baseURL)?APPID=\(APIKey)&units=metric&exclude=minutely,current,hourly&lat=\(lat)&lon=\(lon)")!
     var weatherCollection: [Weather] = []
