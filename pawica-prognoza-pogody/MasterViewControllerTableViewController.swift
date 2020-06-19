@@ -60,7 +60,7 @@ class MasterViewControllerTableViewController: UITableViewController {
         let temperature = currentWeather!.temperature.min
         cell.textLabel?.text = key
         cell.detailTextLabel?.text = String(temperature) + "°C" // Add current temperature
-        cell.imageView?.image = self.getElementFromUrl(url: URL(string: "https://openweathermap.org/img/wn/" + currentWeather!.icon + "@2x.png")!)
+        cell.imageView?.image = UIImage(named: "weather_icon_" + currentWeather!.icon)
         return cell
     }
     

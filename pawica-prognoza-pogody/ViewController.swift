@@ -11,18 +11,15 @@ import UIKit
 class ViewController: UIViewController {
     
     private var currentDay = 0
-    private var lastDay = 7
+    private var lastDay = 4
 
     private var data = [Weather]()
     
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        //Hardcoded location for testing (Krakow)
-        let lat = 50.062149
-        let lon = 19.944588
         let weather = ApiHandler()
-        weather.getWeather(lat, lon, completion: {(results: [Weather]) in
+        weather.getWeather("Krakow", completion: {(results: [Weather]) in
             self.data = results
             self.Update()
         })

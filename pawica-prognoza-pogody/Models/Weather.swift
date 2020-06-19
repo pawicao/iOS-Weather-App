@@ -17,7 +17,7 @@ struct Weather {
 	}
 
 	let main: String
-	let temperature: (min: Double, max: Double)
+    let temperature: (min: Double, max: Double, avg: Double)
 	let wind: (speed: Double, deg: Int)
 	let rain: Double
 	let pressure: Int
@@ -25,43 +25,40 @@ struct Weather {
     let date: String
 	
 	init(response: [String: Any]) throws {
-        
         guard let weatherJSON = response["weather"] as? [AnyObject],
-			let main = weatherJSON[0]["main"] as? String,
+			let main = weatherJSON[0]["description"] as? String,
             let iconName = weatherJSON[0]["icon"] as? String
 		else {
-			throw SerializationError.missing("main")
+			throw SerializationError.missing("main_description")
 		}
         
-		guard let temperatureJSON = response["temp"] as? [String: Double],
-			let min = temperatureJSON["min"],
-			let max = temperatureJSON["max"]
-		else {
-			throw SerializationError.missing("temperature")
-		}
+        guard let mainJSON = response["main"] as? [String: Any],
+            let min = mainJSON["temp_min"] as? Double,
+            let max = mainJSON["temp_max"] as? Double,
+            let avg = mainJSON["temp"] as? Double,
+            let pressure = mainJSON["pressure"] as? Int
+        else {
+            throw SerializationError.missing("main")
+        }
+        
+        guard let windJSON = response["wind"] as? [String: Any],
+            let wind_speed = windJSON["speed"] as? Double,
+            let wind_deg = windJSON["deg"] as? Int
+        else {
+            throw SerializationError.missing("wind")
+        }
 		
-		guard let pressure = response["pressure"] as? Int else {
-			throw SerializationError.missing("pressure")
-		}
-        
         guard let dt = response["dt"] as? Double else {
             throw SerializationError.missing("dt")
         }
 		
-		let rain = response["rain"] as? Double ?? 0.0
-		
-		guard let wind_speed = response["wind_speed"] as? Double else {
-			throw SerializationError.missing("wind_speed")
-		}
-		
-		guard let wind_deg = response["wind_deg"] as? Int else {
-			throw SerializationError.missing("wind_deg")
-		}
-        
+        var rain = 0.0
+        let rainWrapper = response["rain"] as? [String: Double]
+        rain = rainWrapper?["3h"] ?? 0.0
         
 		
 		self.main = main
-		self.temperature = (min, max)
+		self.temperature = (min, max, avg)
 		self.wind = (wind_speed, wind_deg)
 		self.rain = rain
 		self.pressure = pressure
