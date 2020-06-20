@@ -13,45 +13,35 @@ class ViewController: UIViewController {
     private var currentDay = 0
     private var lastDay = 4
 
-    private var data = [Weather]()
+    private var data: CityWeather? {
+        didSet {
+            self.currentDay = 0
+            Update()
+        }
+    }
+    
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        
-        let weather = ApiHandler()
-        weather.getWeather("Krakow", completion: {(results: [Weather]) in
-            self.data = results
-            self.Update()
-        })
     }
 
     func Update() {
-        DispatchQueue.main.async{
-            self.tempMax.text = String(self.data[self.currentDay].temperature.max) + "°C"
-            self.tempMin.text = String(self.data[self.currentDay].temperature.min) + "°C"
-            self.weatherDescription.text = self.data[self.currentDay].main
-            self.pressure.text = String(self.data[self.currentDay].pressure) + "hPa"
-            self.rain.text = String(self.data[self.currentDay].rain) + "mm"
-            self.windSpeed.text = String(self.data[self.currentDay].wind.speed) + "m/s"
-            self.windDegree.text = String(self.data[self.currentDay].wind.deg) + "°"
-            self.getElementFromUrl(url: URL(string: "https://openweathermap.org/img/wn/" + self.data[self.currentDay].icon + "@2x.png")!)
-            self.date.text = self.data[self.currentDay].date
-            
-            self.previousDayButton.isEnabled = !(self.currentDay == 0)
-            self.nextDayButton.isEnabled = !(self.currentDay == self.lastDay)
-        }
-    }
-    
-    func getElementFromUrl(url: URL) {
-        DispatchQueue.global().async { [weak self] in
-            if let elem = try? Data(contentsOf: url) {
-                if let img = UIImage(data: elem) {
-                    DispatchQueue.main.async {
-                        self?.icon.image = img
-                    }
-                }
-            }
-        }
+        loadViewIfNeeded()
+        self.tempMax.text = String(self.data!.weatherCollection[self.currentDay].temperature.max) + "°C"
+        self.tempMin.text = String(self.data!.weatherCollection[self.currentDay].temperature.min) + "°C"
+        self.weatherDescription.text = self.data!.weatherCollection[self.currentDay].main
+        self.pressure.text = String(self.data!.weatherCollection[self.currentDay].pressure) + "hPa"
+        self.rain.text = String(self.data!.weatherCollection[self.currentDay].rain) + "mm"
+        self.windSpeed.text = String(self.data!.weatherCollection[self.currentDay].wind.speed) + "m/s"
+        self.windDegree.text = String(self.data!.weatherCollection[self.currentDay].wind.deg) + "°"
+        self.icon.image = UIImage(named: "weather_icon_" + self.data!.weatherCollection[self.currentDay].icon)
+        self.date.text = self.data!.weatherCollection[self.currentDay].date
+        self.cityName.text = self.data!.cityName
+        
+        self.title = self.data!.cityName
+        
+        self.previousDayButton.isEnabled = !(self.currentDay == 0)
+        self.nextDayButton.isEnabled = !(self.currentDay == self.lastDay)
     }
     
     @IBOutlet weak var tempMax: UITextField!
@@ -65,6 +55,7 @@ class ViewController: UIViewController {
     @IBOutlet weak var date: UILabel!
     @IBOutlet weak var previousDayButton: UIButton!
     @IBOutlet weak var nextDayButton: UIButton!
+    @IBOutlet weak var cityName: UILabel!
     
     @IBAction func goBack(_ caller: UIButton) {
         self.currentDay -= 1
@@ -77,3 +68,8 @@ class ViewController: UIViewController {
     }
 }
 
+extension ViewController: CityWeatherSelectionDelegate {
+    func cityWeatherSelected(_ newCityWeather: CityWeather) {
+        data = newCityWeather
+    }
+}

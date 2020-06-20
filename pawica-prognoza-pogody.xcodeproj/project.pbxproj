@@ -14,7 +14,7 @@
 		3FEE814A247E7D20001881EA /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 3FEE8149247E7D20001881EA /* Assets.xcassets */; };
 		3FEE814D247E7D20001881EA /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 3FEE814B247E7D20001881EA /* LaunchScreen.storyboard */; };
 		3FEE8159247E8150001881EA /* ApiHandler.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3FEE8158247E8150001881EA /* ApiHandler.swift */; };
-		75388161249BE59300E8F24C /* MasterViewControllerTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 75388160249BE59300E8F24C /* MasterViewControllerTableViewController.swift */; };
+		75388161249BE59300E8F24C /* MasterViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 75388160249BE59300E8F24C /* MasterViewController.swift */; };
 		75388164249C1FEE00E8F24C /* Utils.swift in Sources */ = {isa = PBXBuildFile; fileRef = 75388163249C1FEE00E8F24C /* Utils.swift */; };
 /* End PBXBuildFile section */
 
@@ -28,7 +28,7 @@
 		3FEE814C247E7D20001881EA /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		3FEE814E247E7D20001881EA /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		3FEE8158247E8150001881EA /* ApiHandler.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ApiHandler.swift; sourceTree = "<group>"; };
-		75388160249BE59300E8F24C /* MasterViewControllerTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MasterViewControllerTableViewController.swift; sourceTree = "<group>"; };
+		75388160249BE59300E8F24C /* MasterViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MasterViewController.swift; sourceTree = "<group>"; };
 		75388163249C1FEE00E8F24C /* Utils.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Utils.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -76,7 +76,7 @@
 				3FEE8142247E7D1D001881EA /* AppDelegate.swift */,
 				3FEE8144247E7D1D001881EA /* ViewController.swift */,
 				3FEE8146247E7D1D001881EA /* Main.storyboard */,
-				75388160249BE59300E8F24C /* MasterViewControllerTableViewController.swift */,
+				75388160249BE59300E8F24C /* MasterViewController.swift */,
 				3FEE8149247E7D20001881EA /* Assets.xcassets */,
 				3FEE814B247E7D20001881EA /* LaunchScreen.storyboard */,
 				3FEE814E247E7D20001881EA /* Info.plist */,
@@ -173,7 +173,7 @@
 			files = (
 				3FEE8145247E7D1D001881EA /* ViewController.swift in Sources */,
 				3FEE8143247E7D1D001881EA /* AppDelegate.swift in Sources */,
-				75388161249BE59300E8F24C /* MasterViewControllerTableViewController.swift in Sources */,
+				75388161249BE59300E8F24C /* MasterViewController.swift in Sources */,
 				3FEE8159247E8150001881EA /* ApiHandler.swift in Sources */,
 				3F8690192487BE7B0031B39D /* Weather.swift in Sources */,
 				75388164249C1FEE00E8F24C /* Utils.swift in Sources */,

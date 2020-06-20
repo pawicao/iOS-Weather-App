@@ -8,31 +8,43 @@
 
 import UIKit
 
-class MasterViewControllerTableViewController: UITableViewController {
+protocol CityWeatherSelectionDelegate: class {
+    func cityWeatherSelected(_ newCityWeather: CityWeather)
+}
+
+class MasterViewController: UITableViewController {
+    
+    weak var delegate: CityWeatherSelectionDelegate?
     
     let apiHandler = ApiHandler()
     
-    var cities = [String: [Weather]]()
+    var cities = [CityWeather]()
+    
+    var initialCities = ["Krakow", "Warsaw", "London"]
     
     private func fillInitialCities() {
-        self.cities["Krakow"] = nil
-        self.cities["Warsaw"] = nil
-        self.cities["London"] = nil
+        for initialCity in self.initialCities {
+            self.addWeather(initialCity)
+        }
     }
-
-    private func Update() {
-        // Fill the cells!
+    
+    private func addWeather(_ city: String) {
+        apiHandler.getWeather(city, completion: {(results: CityWeather) in
+            DispatchQueue.main.async{
+                self.cities.append(results)
+                self.tableView.beginUpdates()
+                self.tableView.insertRows(at: [IndexPath(row: self.cities.count - 1, section: 0)], with: .automatic)
+                self.tableView.endUpdates()
+            }
+        })
     }
     
     override func viewDidLoad() {
         super.viewDidLoad()
         self.fillInitialCities()
         
-        for city in cities.keys {
-            apiHandler.getWeather(city, completion: {(results: [Weather]) in
-                self.cities[city] = results
-                self.Update()
-            })
+        for city in cities {
+            print(city.cityName)
         }
         // Uncomment the following line to preserve selection between presentations
         // self.clearsSelectionOnViewWillAppear = false
@@ -55,13 +67,21 @@ class MasterViewControllerTableViewController: UITableViewController {
     
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: "Cell", for: indexPath)
-        let key = Array(self.cities.keys)[indexPath.row]
-        let currentWeather = self.cities[key]!.first
-        let temperature = currentWeather!.temperature.min
-        cell.textLabel?.text = key
+        let currentWeather = (self.cities[indexPath.row].weatherCollection.first)!
+        let temperature = currentWeather.temperature.avg
+        cell.textLabel?.text = self.cities[indexPath.row].cityName
         cell.detailTextLabel?.text = String(temperature) + "°C" // Add current temperature
-        cell.imageView?.image = UIImage(named: "weather_icon_" + currentWeather!.icon)
+        cell.imageView?.image = UIImage(named: "weather_icon_" + currentWeather.icon)
         return cell
+    }
+    
+    override func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        let selectedCityWeather = self.cities[indexPath.row]
+        delegate?.cityWeatherSelected(selectedCityWeather)
+        
+        if let detailViewController = delegate as? ViewController {
+            splitViewController?.showDetailViewController(detailViewController, sender: nil)
+        }
     }
     
 

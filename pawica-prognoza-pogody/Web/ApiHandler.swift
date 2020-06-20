@@ -13,7 +13,7 @@ class ApiHandler {
   private let baseURL = "https://api.openweathermap.org/data/2.5/forecast"
   private let APIKey = "8eec1ab6030b33a264452699708b1f87"
     
-  func getWeather(_ city: String, completion: @escaping ([Weather]) -> Void) {
+  func getWeather(_ city: String, completion: @escaping (CityWeather) -> Void) {
     let requestURL = URL(string: "\(baseURL)?APPID=\(APIKey)&units=metric&q=\(city)")!
     var weatherCollection: [Weather] = []
     
@@ -31,7 +31,7 @@ class ApiHandler {
               }
             }
         }
-        completion(weatherCollection)
+        completion(CityWeather(name: city, arr: weatherCollection))
       }
 	)
     session.resume()

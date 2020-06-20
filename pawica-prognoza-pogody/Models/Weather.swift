@@ -8,6 +8,16 @@
 
 import Foundation
 
+struct CityWeather {
+    let cityName: String
+    let weatherCollection: [Weather]
+    
+    init(name: String, arr: [Weather]) {
+        self.cityName = name
+        self.weatherCollection = arr
+    }
+}
+
 struct Weather {
     
 
