@@ -14,7 +14,8 @@ class ApiHandler {
   private let APIKey = "8eec1ab6030b33a264452699708b1f87"
     
   func getWeather(_ city: String, completion: @escaping (CityWeather) -> Void) {
-    let requestURL = URL(string: "\(baseURL)?APPID=\(APIKey)&units=metric&q=\(city)")!
+    let correctedCity = city.replacingOccurrences(of: " ", with: "+")
+    let requestURL = URL(string: "\(baseURL)?APPID=\(APIKey)&units=metric&q=\(correctedCity)")!
     var weatherCollection: [Weather] = []
     
     let session = URLSession.shared.dataTask(with: requestURL, completionHandler:
@@ -36,4 +37,28 @@ class ApiHandler {
 	)
     session.resume()
   }
+    
+    func getCities(_ citySubstring: String, completion: @escaping ([String]) -> Void) {
+        let correctedPrefix = citySubstring.replacingOccurrences(of: " ", with: "+")
+        let requestURL = URL(string: "http://geodb-free-service.wirefreethought.com/v1/geo/cities?limit=10&namePrefix=\(correctedPrefix)")!
+        var citiesCollection: [String] = []
+        
+        let session = URLSession.shared.dataTask(with: requestURL, completionHandler:
+          {data, response, error in
+            if (error == nil && data != nil) {
+                if let json = try? JSONSerialization.jsonObject(with: data!, options: []) as? [String: Any] {
+                  if let responseArray = json?["data"] as? [[String: Any]] {
+                    for city in responseArray {
+                        let cityName = city["name"] as! String
+                        citiesCollection.append(cityName)
+                    }
+                  }
+                }
+            }
+            completion(citiesCollection)
+          }
+        )
+        session.resume()
+        
+    }
 }
